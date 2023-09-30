@@ -7,9 +7,13 @@ const PictureFrame = () => {
   const [isPaused, setIsPaused] = useState(false);
 
   const images = [
-    'images/image1.png',
-    'images/image2.png',
-    'images/image3.png'
+    'images/image1.JPG',
+    'images/image2.JPG',
+    'images/image3.JPG',
+    'images/image4.JPG',
+    'images/image5.JPG',
+    'images/image6.JPG',
+    'images/image6.JPG'
   ];
 
   const nextImage = () => setCurrentImage((prevImage) => (prevImage + 1) % images.length);
