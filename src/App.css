@@ -1,38 +1,128 @@
-.App {
+body {
+  background-color: #737CCF; /* Unique blue color */
+  margin: 0;
+  padding: 0;
+}
+
+.button-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
   text-align: center;
+  z-index: 2; /* Existing property */
+  padding-bottom: 60px; /* Add this line */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pause-button {
+  position: absolute;
+  bottom: 0; /* Position it at the bottom */
+  left: 50%; /* Center it horizontally */
+  background: transparent;
+  border: none;
+  transform: translateX(-50%); /* Necessary for centering */
+  padding: 0px;
+  z-index: 2; /* Ensure it's above other elements */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+.pause-button img {
+  width: 50px;  /* Set the width */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+
+.frame {
+  display: inline-block;
+  margin: auto;
+}
+
+.image-container {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Responsive scaling */
+@media only screen and (max-width: 600px) {
+  .image-container {
+    width: 200px;
+    height: 200px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+@media only screen and (max-width: 400px) {
+  .image-container {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.chevron-button {
+  position: absolute;
+  top: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 2em;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.chevron-button img {
+  width: 50px;  /* Set the width */
+  height: auto; /* Maintain the aspect ratio */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chevron-button.left {
+  left: -70px;
+  transform: translateY(-50%);
 }
+
+.chevron-button.right {
+  right: -70px;
+  transform: translateY(-50%);
+}
+
+.quote-box {
+  background-color: #E1E5F8;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  text-align: center;
+}
+.author-subscript {
+  font-size: 0.8em;
+  color: gray;
+}
+.comment-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.comment-section h2 {
+  font-size: 1.5em;
+}
+
+.comment-section input {
+  margin-right: 10px;
+}
+
+.comment-section ul {
+  list-style: none;
+  padding: 0;
+}
+
